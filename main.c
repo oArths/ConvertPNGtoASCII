@@ -21,8 +21,7 @@ char get_ascii(unsigned char r, unsigned char g, unsigned char b) {
 }
 void main() {
   int largura, altura, canais;
-  printf("funcionosssu\n");
-  unsigned char *img = stbi_load("output/image.png", &largura, &altura, &canais, 3);
+  unsigned char *img = stbi_load("output/bandeira.png", &largura, &altura, &canais, 3);
 
   if (!img) {
     printf("Erro ao carregar imagem: %s\n", stbi_failure_reason());
@@ -30,8 +29,8 @@ void main() {
   }
 
   // Para cada pixel, converte em ASCII
-  int fator_x = largura / 100;
-  int fator_y = altura / 50;
+  int fator_x = largura / 153;
+  int fator_y = altura / 40;
 
   for (int y = 0; y < altura; y += fator_y) {
     for (int x = 0; x < largura; x += fator_x) {
